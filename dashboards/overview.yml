@@ -1,9 +1,9 @@
 --- 
 format: 1A
-title: "Redis"
+title: Redis
 grid: 
   - 
-    title: "Memory"
+    title: Memory
     height: 300
     tiles: 
       - 
@@ -14,9 +14,9 @@ grid:
         widget: mem_fragmentation_ratio
       - 
         size: 4
-        widget: health__memory
+        widget: health/memory
   - 
-    title: "Performance"
+    title: Performance
     height: 300
     tiles:
       - 

@@ -1,6 +1,6 @@
 {
   "name": "redis",
-  "version": "0.6",
+  "version": "0.7",
   "description": "Redis monitoring",
   "repository": {
     "type": "git",
@@ -16,6 +16,9 @@
       "type": "git",
       "url": "https://github.com/riemann/riemann-redis"
     }
+  },
+  "dependencies": {
+    "health": "0.4"
   },
   "license": "EPL"
 }

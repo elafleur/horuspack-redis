@@ -1,0 +1,21 @@
+{
+  "name": "redis",
+  "version": "0.5",
+  "description": "Redis monitoring",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elafleur/horuspack-redis"
+  },
+  "tags": [
+    "#redis"
+  ],
+  "author": "Eric Lafleur <eric@crambit.com>",
+  "producer": {
+    "type": "external",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/riemann/riemann-redis"
+    }
+  },
+  "license": "EPL"
+}

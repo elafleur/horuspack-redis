@@ -1,0 +1,13 @@
+--- 
+format: 1A
+chart: 
+  title: "Redis Used Memory"
+  type: time-series
+datasource: 
+  collection: "redis used_memory"
+  groupby: host
+  interval: ss
+  duration: 1m
+--- 
+### Total number of bytes allocated by Redis in MB
+If used_memory exceeds the total available system memory, the operating system will begin swapping old/unused sections of memory. Setting the **maxmemory** directive in the redis.conf file gives you direct control over Redis’s memory usage.

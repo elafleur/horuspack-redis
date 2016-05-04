@@ -1,0 +1,4 @@
+ns-tag: "#redis"
+
+min_mem_fragmentation_ratio: 1
+max_mem_fragmentation_ratio: 1.5

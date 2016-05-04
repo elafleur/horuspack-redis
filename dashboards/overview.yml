@@ -1,0 +1,27 @@
+--- 
+format: 1A
+title: "Redis"
+grid: 
+  - 
+    title: "Memory"
+    height: 300
+    tiles: 
+      - 
+        size: 4
+        widget: used_memory
+      - 
+        size: 4
+        widget: mem_fragmentation_ratio
+      - 
+        size: 4
+        widget: health__memory
+  - 
+    title: "Performance"
+    height: 300
+    tiles:
+      - 
+        size: 6
+        widget: hit_rate
+      - 
+        size: 6
+        widget: instantaneous_ops_per_sec

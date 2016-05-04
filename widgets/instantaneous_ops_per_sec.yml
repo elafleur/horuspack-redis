@@ -1,0 +1,13 @@
+--- 
+format: 1A
+chart: 
+  title: "Redis Commands Per Second"
+  type: time-series
+datasource: 
+  collection: "redis instantaneous_ops_per_sec"
+  groupby: host
+  interval: ss
+  duration: 1m
+--- 
+### Throughput of commands processed
+A drop in the number of commands processed per second as compared to historical norms could be a sign of either low command volume or slow commands blocking the system.

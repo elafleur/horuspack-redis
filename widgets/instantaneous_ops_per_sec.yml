@@ -9,5 +9,6 @@ datasource:
   interval: ss
   duration: 1m
 --- 
-### Throughput of commands processed
+[![Redis](https://raw.githubusercontent.com/elafleur/horuspack-redis/master/icon.png)](https://github.com/elafleur/horuspack-redis)
+#### Throughput of commands processed
 A drop in the number of commands processed per second as compared to historical norms could be a sign of either low command volume or slow commands blocking the system.

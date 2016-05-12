@@ -7,14 +7,14 @@ grid:
     height: 300
     tiles: 
       - 
-        size: 4
-        widget: used_memory
+        size: 12
+        widget: health/memory
       - 
-        size: 4
+        size: 6
         widget: mem_fragmentation_ratio
       - 
-        size: 4
-        widget: health/memory
+        size: 6
+        widget: used_memory
   - 
     title: Performance
     height: 300

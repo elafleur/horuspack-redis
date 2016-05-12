@@ -9,5 +9,6 @@ datasource:
   interval: ss
   duration: 1m
 --- 
-### Total number of bytes allocated by Redis in MB
+[![Redis](https://raw.githubusercontent.com/elafleur/horuspack-redis/master/icon.png)](https://github.com/elafleur/horuspack-redis)
+#### Total number of bytes allocated by Redis in MB
 If used_memory exceeds the total available system memory, the operating system will begin swapping old/unused sections of memory. Setting the **maxmemory** directive in the redis.conf file gives you direct control over Redis’s memory usage.

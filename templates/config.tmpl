@@ -1,16 +1,16 @@
 (ns pack.redis.config
-  "Monitors a cluster of Redis database."
+  "Redis monitoring."
   (:require [riemann.config :refer :all]
             [riemann.streams :refer :all]
             [riemann.folds :as folds]
             [riemann.common :refer [event]]
             [core.alert.config :refer [alert]]
-            [core.engine.config :refer [time-series]]))
+            [core.tslog.config :refer [time-series]]))
 
 (let [index (index)]
   (streams
     ; package namespace tag
-    (where (tagged "{{ns-tag}}")
+    (where (tagged "{{&ns-tag}}")
 
       ; time-series of used memory in MB for each host
       (match :service "redis used_memory"
@@ -22,7 +22,7 @@
         (project [(service "redis used_memory_rss") (service "redis used_memory")]
           (smap folds/quotient
             (with :service "redis mem_fragmentation_ratio"
-              (without [{{min_mem_fragmentation_ratio}} {{max_mem_fragmentation_ratio}}]
+              (without [{{&min_mem_fragmentation_ratio}} {{&max_mem_fragmentation_ratio}}]
                 (throttle 5 3600
                   (alert :level "minor")))
               (time-series :groupby "host")))))

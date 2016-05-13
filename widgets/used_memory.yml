@@ -2,7 +2,7 @@
 format: 1A
 chart: 
   title: "Redis Used Memory"
-  type: time-series
+  type: line
 datasource: 
   collection: "redis used_memory"
   groupby: host

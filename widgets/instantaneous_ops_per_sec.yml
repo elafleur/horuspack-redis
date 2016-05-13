@@ -2,7 +2,7 @@
 format: 1A
 chart: 
   title: "Redis Commands Per Second"
-  type: time-series
+  type: line
 datasource: 
   collection: "redis instantaneous_ops_per_sec"
   groupby: host

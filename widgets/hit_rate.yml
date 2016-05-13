@@ -2,7 +2,7 @@
 format: 1A
 chart: 
   title: "Redis Hit Rate"
-  type: time-series
+  type: line
 datasource: 
   collection: "redis hit_rate"
   groupby: host

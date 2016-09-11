@@ -1,14 +1,13 @@
---- 
+---
 format: 1A
-chart: 
-  title: "Redis Commands Per Second"
-  type: line
-datasource: 
-  collection: "redis instantaneous_ops_per_sec"
-  groupby: host
+chart:
+  title: 'Commands Per Second'
+  type: time-series
+datasource:
+  collection: 'redis instantaneous_ops_per_sec groupby_host'
   interval: ss
   duration: 1m
---- 
-[![Redis](https://raw.githubusercontent.com/elafleur/horuspack-redis/master/icon.png)](https://github.com/elafleur/horuspack-redis)
+---
+
 #### Throughput of commands processed
 A drop in the number of commands processed per second as compared to historical norms could be a sign of either low command volume or slow commands blocking the system.

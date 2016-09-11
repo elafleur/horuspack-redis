@@ -1,14 +1,13 @@
---- 
+---
 format: 1A
-chart: 
-  title: "Redis Hit Rate"
-  type: line
-datasource: 
-  collection: "redis hit_rate"
-  groupby: host
+chart:
+  title: 'Hit Rate'
+  type: time-series
+datasource:
+  collection: 'redis hit_rate groupby_host'
   interval: ss
   duration: 1m
---- 
-[![Redis](https://raw.githubusercontent.com/elafleur/horuspack-redis/master/icon.png)](https://github.com/elafleur/horuspack-redis)
+---
+
 #### Tells you if your cache is being used effectively or not
 A low cache hit rate can be caused by a number of factors, including data expiration and insufficient memory allocated to Redis (which could cause key eviction).

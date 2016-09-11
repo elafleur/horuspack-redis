@@ -1,0 +1,39 @@
+; -*- mode: clojure; -*-
+; vim: filetype=clojure
+
+(ns horus.redis.config.main
+  "Redis monitoring."
+  (:require [riemann.config :refer :all]
+            [riemann.streams :refer :all]
+            [riemann.folds :as folds]
+            [riemann.common :refer [event]]
+            [horus.alert.config.main :refer [alert]]
+            [horus.tslog.config.main :refer [time-series]]))
+
+(streams
+  ; package namespace tag
+  (where (tagged "{{&ns-tag}}")
+
+    ; time-series of used memory in MB
+    (match :service "redis used_memory"
+      (with :collection "redis used_memory groupby_host"
+        (scale (/ 1 1024 1024)
+          (time-series :groupby "host"))))
+
+    ; time-series of instantaneous_ops_per_sec
+    (match :service "redis instantaneous_ops_per_sec"
+      (with :collection "redis instantaneous_ops_per_sec groupby_host"
+        (time-series :groupby "host")))
+
+    ; time-series of hit rate
+    (by :host
+      (project [(service "redis keyspace_hits") (service "redis keyspace_misses")]
+        (smap (fn [events]
+                (let [fe (first events)
+                      le (last events)
+                      ratio (/ (:metric fe) (+ (:metric fe) (:metric le)))]
+                  (event {:service "redis hit_rate"
+                          :host (:host fe)
+                          :metric ratio})))
+          (with :collection "redis hit_rate groupby_host"
+            (time-series :groupby "host")))))))

@@ -9,14 +9,10 @@ Source: https://github.com/riemann/riemann-redis
 
 ``` bash
 gem install riemann-redis
-riemann-redis --host my.riemann.server --tag '#redis'
+riemann-redis --host my.riemann.server --interval 1 --tag '#redis'
 ```
 
 If you want to use a different tag, please make sure to also modify the namespace tag in the configuration so that both match.
-
-## Metrics
-
-See [services](https://github.com/elafleur/horuspack-redis/blob/master/services) for a list of event services exported by the producer.
 
 ## License
 

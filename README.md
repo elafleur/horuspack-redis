@@ -1,5 +1,5 @@
 # redis horus package
-[![horusable](https://cdn.rawgit.com/crambit/horus/master/public/badges/horusable.svg)](https://github.com/crambit/horus)
+[![horusable](https://cdn.rawgit.com/crambit/hobs/master/public/badges/horusable.svg)](https://github.com/crambit/hobs)
 
 Redis monitoring. Submits the result of `INFO` command.
 

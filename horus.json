@@ -20,6 +20,5 @@
   "dependencies": {
     "health": "0.18"
   },
-  "license": "EPL",
-  "_registry": "quarry"
+  "license": "EPL"
 }
